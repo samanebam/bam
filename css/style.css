@@ -1,0 +1,307 @@
+/* تنظیمات پایه */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, sans-serif;
+}
+
+@font-face {
+    font-family: 'morabba-regular';
+    src: url('../font/morabba/eot/morabba-regular.eot');
+    src: url('../font/morabba/eot/morabba-regular.eot') format('eot'),
+         url('../font/morabba/woff/morabba-regular.woff') format('woff'),
+         url('../font/morabba/ttf/morabba-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'morabba-black';
+    src: url('../font/morabba/eot/morabba-black.eot');
+    src: url('../font/morabba/eot/morabba-black.eot') format('eot'),
+         url('../font/morabba/woff/morabba-black.woff') format('woff'),
+         url('../font/morabba/ttf/morabba-black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'yekanbakh-regular';
+    src: url('../font/yekan_bakh/eot/YekanBakh-Regular.eot');
+    src: url('../font/yekan_bakh/eot/YekanBakh-Regular.eot') format('eot'),
+         url('../font/yekan_bakh/woff/YekanBakh-Regular.woff') format('woff'),
+         url('../font/yekan_bakh/ttf/YekanBakh-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'yekanbakh-bold';
+    src: url('../font/yekan_bakh/eot/YekanBakh-Bold.eot');
+    src: url('../font/yekan_bakh/eot/YekanBakh-Bold.eot') format('eot'),
+         url('../font/yekan_bakh/woff/YekanBakh-Bold.woff') format('woff'),
+         url('../font/yekan_bakh/ttf/YekanBakh-Bold.ttf') format('truetype');
+}
+
+
+/* لوگو در مرکز */
+.logo {
+    text-align: center;
+    margin-top: 0;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* عنوان */
+.title {
+    font-family: 'morabba-black';
+    color: #ff8c00;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.fontst {
+    font-family: 'morabba-regular';
+    font-size: 16px;
+}
+
+.subtitle {
+    font-family: 'morabba-regular';
+    color: #b0b0b0;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+/* دکمه دریافت اپلیکیشن */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: hsla(127, 88%, 53%, 0.5);
+    color: var(--foreground-color);
+    box-shadow: inset 1px 1px 1px hsla(0,0%,100%,.09);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    position: fixed;
+    bottom: 130px;  /* فاصله از پایین صفحه */
+    left: 50%;     /* مرکز دکمه در عرض صفحه */
+    transform: translateX(-50%);  /* برای مرکز کردن دقیق دکمه */
+    transition: background-color 0.7s ease, color 0.7s ease, transform 0.7s ease;
+    z-index: 10000;
+}
+
+.button.active {
+
+    z-index: 0;
+
+}
+
+.button:hover {
+    background-color: #00a651;
+    color: #fff;
+    transform: translateX(-53%) scale(1.1);
+}
+
+/* دکمه دانلود مستقیم بام */
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 22px;
+    margin-top: 23px;
+    background-color: transparent;
+    color: #fff;
+    border: 0.8px solid #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    transition: color 0.5s ease;
+}
+
+
+
+.download-button i {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+/* افکت هاور برای دکمه دانلود مستقیم بام */
+.download-button::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: top 0.5s ease;
+    z-index: 0;
+}
+
+.download-button:hover::before {
+    top: 0;
+}
+
+.download-button:hover {
+    color: #000;
+}
+
+.download-button i, .download-button span {
+    position: relative;
+    z-index: 0;
+}
+
+body {
+    overflow-x: hidden;
+    color: #fff;
+    text-align: center;
+    background-image: url(../images/13.webp);
+    background-color: rgba(31,31,31,255);
+    background-repeat: no-repeat;
+    background-size: 128% auto;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 18px;
+    }
+
+    .download-button {
+        padding: 6px 22px;
+        font-size: 16px;
+    }
+
+    .logo img {
+        max-width: 80px;
+    }
+}
+
+
+.pos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 60px;
+    z-index: 100000000000;
+}
+
+.pos.active {
+    z-index: 0;
+}
+
+/* استایل منو همبرگری */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 4px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 20;
+}
+
+.menu-icon div {
+    width: 24px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.menu-icon div:nth-child(1) {
+    width: 16px; /* کوچک‌ترین خط */
+    height: 3px;
+    border-radius: 100px;
+}
+
+.menu-icon div:nth-child(2) {
+    width: 32px; /* بزرگ‌ترین خط */
+    height: 3px;
+    border-radius: 100px;
+}
+
+.menu-icon div:nth-child(3) {
+    width: 24px; /* خط متوسط */
+    height: 3px;
+    border-radius: 100px;
+}
+.menu-icon.open div:nth-child(1) {
+    width: 30px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 7px; /* انتقال به سمت پایین */
+}
+
+.menu-icon.open div:nth-child(2) {
+    opacity: 0; /* مخفی شدن خط وسط */
+}
+
+.menu-icon.open div:nth-child(3) {
+    width: 30px;
+    transform: rotate(-45deg);
+    position: relative;
+    top: -7px; /* انتقال به سمت بالا */
+}
+
+/* بلور کردن کل صفحه به‌جز منو همبرگری و سایدبار */
+.blur {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: filter 0.3s ease;
+    z-index: 1; /* برای اطمینان از اینکه زیر سایدبار نمایش داده شود */
+}
+
+/* مخفی نگه‌داشتن overlay تا هنگام نمایش منو همبرگری */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* لایه نیمه‌شفاف روی صفحه */
+    display: none;
+    z-index: 5;
+}
+#overlay.show {
+    display: block;
+    backdrop-filter: blur(15px); /* بلور کردن کل صفحه */
+}
+
+p {
+    font-family: 'morabba-regular';
+}
+
+/* تنظیمات sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    font-family: 'morabba-regular';
+    font-size: 25px;
+    padding-top: 275px;
+    padding-right: 50px;
+    z-index: 10; /* اطمینان از اینکه بالای overlay قرار بگیرد و بلور نشود */
+    text-align: right;
+}
+
+/* نمایش و انیمیشن پاراگراف‌ها */
+.sidebar ul {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    list-style-type: none; /* حذف دایره‌های کنار آیتم‌ها */
+}
+
+.sidebar.show ul {
+    opacity: 1;
+    transform: translateX(0);
+    list-style-type: none; /* حذف دایره‌های کنار آیتم‌ها */
+}
